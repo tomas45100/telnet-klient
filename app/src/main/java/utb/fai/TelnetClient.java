@@ -17,7 +17,6 @@ public class TelnetClient {
     public void run() {
         try {
             socket = new Socket(serverIp, port);
-            System.out.println("Klient se uspesne pripojil k serveru");
             Thread readerThread = new Thread(() -> readFromServer());
             Thread writerThread = new Thread(() -> writeToServer());
             readerThread.start();
